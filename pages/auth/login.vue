@@ -2,7 +2,7 @@
   <section class="container">
     <div class="columns is-centered">
       <div class="column is-one-third">
-        <form @submit.prevent="login" class="has-background-light card m-top-l">
+        <form class="has-background-light card m-top-l" @submit.prevent="login">
           <div class="card-header is-block is-black">
             <div class="card-header-title is-centered">
               <p class="is-size-4 ">Login</p>
@@ -41,7 +41,11 @@
               {{ errorMessage }}
             </div>
             <div class="field">
-              <button class="button is-medium is-primary" type="submit">
+              <button
+                class="button is-medium cta cta-button"
+                :class="{ 'is-loading': loggingIn }"
+                type="submit"
+              >
                 Login
               </button>
             </div>
@@ -60,18 +64,22 @@ export default {
     return {
       email: '',
       password: '',
-      errorMessage: ''
+      errorMessage: '',
+      loggingIn: false
     }
   },
   methods: {
     login() {
       this.errorMessage = ''
+      this.loggingIn = true
       return auth
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          this.loggingIn = false
           this.$router.push('/fantasy')
         })
         .catch(e => {
+          this.loggingIn = false
           this.errorMessage = e.message
         })
     }

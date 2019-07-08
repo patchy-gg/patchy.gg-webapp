@@ -3,6 +3,12 @@
 $primary: blue;
 $bg-color: #454f5a;
 
+$outer-space: #454f5a;
+$floral-white: #fff8f0;
+$red-brown: #9e2b25;
+$dark-sienna: #471323;
+$maastricht-blue: #0b132b;
+
 $sizeUnit: rem;
 $marginKey: 'm';
 $paddingKey: 'p';
@@ -49,9 +55,22 @@ $positions: (
   }
 }
 
-body {
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-  height: 100vh;
+.navbar-start.navbar-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.login-button {
+  background-color: $floral-white !important;
+  color: $maastricht-blue !important;
+}
+
+.cta {
+  color: $floral-white !important;
+}
+.cta-button {
+  background-color: $red-brown !important;
+  border-color: $dark-sienna !important;
 }
 
 .bg-item {

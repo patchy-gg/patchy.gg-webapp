@@ -8,9 +8,9 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
+    "precommit": "",
     "test": "jest",
-    "serve": "firebase serve --only hosting"
+    "serve": "netlify dev"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -19,6 +19,7 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "firebase": "^6.2.0",
+    "firebase-admin": "^8.2.0",
     "nuxt": "^2.4.0",
     "vuex-persistedstate": "^2.5.4"
   },
@@ -40,7 +41,9 @@
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
+    "fauna-shell": "^0.9.3",
     "jest": "^24.1.0",
+    "netlify-cli": "^2.11.23",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
     "postcss-preset-env": "^6.6.0",

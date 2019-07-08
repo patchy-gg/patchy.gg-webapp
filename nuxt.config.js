@@ -3,6 +3,20 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  generate: {
+    routes() {
+      return new Promise((resolve, reject) => {
+        //TODO axios call for teams
+        //TODO axios call for players
+        return resolve(
+          ['1', '2'].map(name => {
+            return `/fantasy/player/${name}`
+          })
+        )
+      })
+    }
+  },
+
   /*
    ** Headers of the page
    */
