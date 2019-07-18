@@ -1,8 +1,8 @@
 <template>
   <nav
     role="navigation"
-    aria-label="main navigation"
     id="navbar"
+    aria-label="main navigation"
     class="navbar"
   >
     <div class="container">
@@ -15,21 +15,30 @@
           ></div>
         </div>
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <nuxt-link class="login-button button" to="/auth/login">
-                Login
-              </nuxt-link>
-              <nuxt-link class="button cta cta-button" to="/auth/register">
-                Sign up
-              </nuxt-link>
-            </div>
+          <div @click="openLoginModal" class="navbar-item button">
+            Login / Register
           </div>
         </div>
       </div>
     </div>
   </nav>
 </template>
+<script>
+import netlifyIdentity from 'netlify-identity-widget'
+
+if (process.client) {
+  netlifyIdentity.init({
+    container: '#login-modal'
+  })
+}
+export default {
+  methods: {
+    openLoginModal() {
+      netlifyIdentity.open()
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #navbar {

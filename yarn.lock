@@ -9057,6 +9057,11 @@ netlify-dev-plugin@^1.0.22:
     wait-port "^0.2.2"
     wrap-ansi "^5.1.0"
 
+netlify-identity-widget@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.5.5.tgz#e9ba8d7676263507106060236cf55c2992f425e4"
+  integrity sha512-gCILbXMVn83TiRaiPCWk93ynyyYgxn8N/KoO+WOfyGZaNgq7gMMPtn7vo6VDe/ZczgyCn9DRlm3artNoj78/MQ==
+
 netlify-redirect-parser@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-1.0.3.tgz#ce7dba7f9aef2c0bd60c35ce585f8360a33671a8"

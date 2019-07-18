@@ -6,8 +6,8 @@ module.exports = {
   generate: {
     routes() {
       return new Promise((resolve, reject) => {
-        //TODO axios call for teams
-        //TODO axios call for players
+        // TODO axios call for teams
+        // TODO axios call for players
         return resolve(
           ['1', '2'].map(name => {
             return `/fantasy/player/${name}`
@@ -22,6 +22,11 @@ module.exports = {
    */
   head: {
     title: pkg.name,
+    script: [
+      {
+        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
+      }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
