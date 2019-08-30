@@ -7,6 +7,8 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "dotenv": "^8.1.0",
+    "faunadb": "^2.8.0",
     "gridsome": "^0.6.0"
   }
 }

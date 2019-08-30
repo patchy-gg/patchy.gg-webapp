@@ -4,10 +4,27 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+require('dotenv').config()
+const faunadb = require('faunadb')
+
+
+const faunaSecret = process.env.FAUNA_SECRET
+
+if(!faunaSecret) {
+  throw new Error("Missing faunadb secret")
+}
+
+const db = new faunadb.Client({ secret: faunaSecret })
 
 module.exports = function (api) {
-  api.loadSource(({ addContentType }) => {
+  api.loadSource( async ({ addContentType }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
+    const players = addContentType({
+      typeName: 'Player',
+      route: '/fantasy/player/:playerName'
+    })
+
+
   })
 
   api.createPages(({ createPage }) => {
